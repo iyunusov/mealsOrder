@@ -1,0 +1,44 @@
+<!-- md-search-text-change="home.searchTextChange(home.searchText)" -->
+<div class="main-fab">
+    <md-autocomplete
+        flex-sm="100"
+        flex-md="100"
+        flex-gt-md="auto"
+        ng-disabled="home.isDisabled"
+        md-no-cache="home.noCache"
+        md-selected-item="home.selectedItem"
+        md-search-text="home.searchText"
+        md-selected-item-change="home.selectedItemChange()"
+        md-items="item in home.querySearch(home.searchText)"
+        md-item-text="item.display"
+        md-min-length="0"
+        placeholder="Please type your restaurant">
+        <md-item-template>
+            <span md-highlight-text="home.searchText" md-highlight-flags="^i">{{item.display}}</span>
+        </md-item-template>
+        <md-not-found>
+            No states matching "{{home.searchText}}" were found.
+            <a ng-click="home.newState(home.searchText)">Create a new one!</a>
+        </md-not-found>
+    </md-autocomplete>
+    <md-button class="md-fab md-accent">+</md-button>
+</div>
+<md-toolbar layout="column" class="md-tall"><span flex="flex"></span>
+    <div class="md-toolbar-tools">
+        <div layout="row" flex="flex" class="fill-height">
+            <div ng-hide="home.toggleSearch" class="md-toolbar-item md-breadcrumb">
+                <span ng-click="home.toggleSearch = !home.toggleSearch">Angular Material Table</span>
+            </div>
+            <span flex="flex" ng-hide="home.toggleSearch"></span>
+            <md-input-container flex="flex" style="padding-left:88px;" ng-show="home.toggleSearch">
+                <input aria-label="search" type="text" ng-model="home.search"/>
+            </md-input-container>
+            <div layout="row" class="md-toolbar-item md-tools"><a href="" ng-click="home.toggleSearch = !home.toggleSearch" class="md-button md-default-theme">
+                <i class="ion-ios-search"></i></a>
+            </div>
+        </div>
+    </div>
+</md-toolbar>
+<md-content layout="column" flex="flex" ng-click="home.toggleSearch=false">
+    <md-table headers="home.headers" content="home.content" sortable="home.sortable" filters="home.search" custom-class="home.custom" thumbs="home.thumbs" count="home.count"></md-table>
+</md-content>

@@ -1,0 +1,57 @@
+
+#initial {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    background: #CCCCCC;
+    z-index: 100;
+}
+
+.fb_iframe_widget {
+    display: inline-block;
+    position: fixed !important;
+    left: 50%;
+    margin-left: -32.5px;
+    top: 50%;
+}
+
+.itemsList {
+    top: 32%;
+    position: absolute;
+    width: 100%;
+}
+
+header {
+    background-color: rgba(148, 218, 31, 0.82);
+    color: white;
+}
+
+.table {
+    left: 5%;
+    text-align: center;
+    width: 90%;
+    position: relative;
+}
+
+#profilePhoto {
+    border-radius: 100px;
+    border: 2px solid #FFFFFF;
+}
+
+#facebook {
+    display: table;
+    width: 200px;
+    position: relative;
+    left: 70%;
+}
+
+#facebook p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#profilePhoto {
+
+}

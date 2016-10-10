@@ -1,0 +1,26 @@
+<md-dialog aria-label="registration dialog" style="opacity:1;width:200px;">
+    <form name="order" ng-submit="dialog.addOrder(); dialog.closeDialog()">
+        <md-dialog-content>
+            <md-input-container>
+                <label>Food Name</label>
+                <input name="mealName" ng-model="dialog.mealName" required />
+                <div ng-messages="order.mealName.$error">
+                    <div ng-message="required">required</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Food Price</label>
+                <input type="number" name="mealPrice" ng-model="dialog.mealPrice" required/>
+                <div ng-messages="order.mealPrice.$error">
+                    <div ng-message="required">required!</div>
+                </div>
+            </md-input-container>
+        </md-dialog-content>
+        <md-dialog-actions>
+            <md-button class="btn-primary" type="submit">Add</md-button>
+            <md-button class="btn-primary" ng-click="dialog.closeDialog()">
+                Cancel
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

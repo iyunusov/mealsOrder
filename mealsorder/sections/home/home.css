@@ -1,0 +1,21 @@
+a {
+  text-decoration: none;
+}
+
+i {
+  vertical-align: middle;
+  font-size: 24px;
+}
+
+.main-fab {
+  position:absolute;
+  z-index:20;
+  font-size:30px;
+  top:100px;
+  left:24px;
+  transform:scale(.88,.88);
+}
+
+.md-breadcrumb {
+  padding-left:88px;
+}

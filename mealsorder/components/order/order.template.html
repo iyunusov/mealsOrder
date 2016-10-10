@@ -1,0 +1,93 @@
+<div id="md-table-template">
+    <table class="md-table">
+        <thead>
+            <tr class="md-table-headers-row">
+                <th ng-repeat="h in vm.headers" class="md-table-header">
+                    <a href="" ng-if="vm.handleSort(h.field)" ng-click="vm.reverse=!vm.reverse;vm.order(h.field,vm.reverse)">
+                        {{h.name}}
+                        <i ng-show="vm.reverse &amp;&amp; h.field == vm.predicate" class="ion-ios-arrow-down"></i>
+                        <i ng-show="!vm.reverse &amp;&amp; h.field == vm.predicate" class="ion-ios-arrow-up"></i>
+                    </a>
+                    <span ng-if="!vm.handleSort(h.field)">
+                        {{h.name}}
+                    </span>
+                </th>
+                <th class="md-table-header"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="c in vm.content | filter:vm.filters | startFrom:vm.tablePage*vm.count | limitTo: vm.count" class="animate md-table-content-row">
+                <td>
+                    <div ng-repeat="h in vm.headers" ng-if="h.field == vm.thumbs" class="md-table-thumbs">
+                        <div style="background-image:url({{c.thumb}})"></div>
+                    </div>
+                </td>
+                <td ng-repeat="h in vm.headers" ng-class="vm.customClass[h.field]" ng-if="h.field != vm.thumbs" class="md-table-content">
+                    {{(h.field.indexOf('date') > 0) ? $filter('date')(c[h.field]) : c[h.field];}}
+                </td>
+                <td>
+                    <md-button class="md-icon-button Info" aria-label="Info"><i class="ion-ios-more"></i></md-button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <div layout="row" class="md-table-footer">
+        <span class="md-table-count-info">Rows per page :
+            <a href="" ng-click="vm.goToPage(0); vm.count=10">10</a>,
+            <a href="" ng-click="vm.goToPage(0); vm.count=25">25</a>,
+            <a href="" ng-click="vm.goToPage(0); vm.count=50">50</a>,
+            <a href="" ng-click="vm.goToPage(0); vm.count=100">100</a>
+            (current is {{vm.count}})
+        </span>
+        <span flex="flex"></span>
+        <span ng-show="vm.nbOfPages() &gt; 1">
+            <md-button class="md-icon-button md-primary" ng-disabled="vm.tablePage==0" ng-click="vm.tablePage=vm.tablePage-1" aria-label="Previous Page">
+                <i class="ion-ios-arrow-back"></i>
+            </md-button>
+            <a href="" ng-repeat="i in vm.getNumber(vm.nbOfPages()) track by $index">
+                <md-button class="md-icon-button md-primary md-table-footer-item" ng-click="vm.goToPage($index)" >
+                    <span ng-class="{ 'md-table-active-page': vm.tablePage==$index }">
+                        {{$index+1}}
+                    </span>
+                </md-button>
+            </a>
+            <md-button ng-disabled="vm.tablePage==vm.nbOfPages()-1" ng-click="vm.tablePage=vm.tablePage+1" aria-label="Next Page" class="md-icon-button md-primary">
+                <i class="ion-ios-arrow-forward"></i>
+            </md-button>
+        </span>
+    </div>
+</div>
+
+
+<!-- <tr> -->
+    <!-- <td>
+        {{ vm.item.name }}
+    </td>
+    <td>
+        {{ vm.item.price }}
+    </td>
+    <td>
+        {{ vm.item.restaurant }}
+    </td>
+    <td>
+        {{ vm.item.personName }}
+    </td>
+    <td>
+        <md-select class="" ng-model="vm.orderStatus" aria-label="Select" placeholder="Status">
+            <md-option value="ordered" selected="selected">Ordered</md-option>
+            <md-option value="delivered">Delivered</md-option>
+            <md-option value="finalized">Finalized</md-option>
+        </md-select>
+    </td>
+    <td>
+        <div class="dialog-demo-content" layout="row" layout-wrap="" layout-margin="">
+            <md-button class="md-primary md-raised" ng-click="vm.removeOrder(vm.item)" flex-sm="100" flex-md="100" flex-gt-md="auto">
+                Remove
+            </md-button>
+        </div>
+    </td> -->
+<!-- </tr> -->
+
+
+<!-- md-table jade template-->

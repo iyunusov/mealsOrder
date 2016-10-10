@@ -1,0 +1,44 @@
+{
+    "name": "meal-order",
+    "dependencies": {
+        "angular": "^1.5.5",
+        "angular-animate": "^1.5.5",
+        "angular-aria": "^1.5.5",
+        "angular-jsdoc": "^1.4.1",
+        "angular-material": "^1.0.8",
+        "angular-messages": "^1.5.5",
+        "angular-route": "^1.5.5",
+        "ionic": "^1.7.15",
+        "ionicons": "^3.0.0",
+        "protractor": "^3.3.0",
+        "ejs": "^2.4.2",
+        "express": "^4.14.0",
+        "gulp": "^3.8.8",
+        "gulp-connect": "^3.0.9"
+    },
+    "devDependencies": {
+        "angular": "^1.5.5",
+        "angular-animate": "^1.5.5",
+        "angular-aria": "^1.5.5",
+        "angular-jsdoc": "^1.4.1",
+        "angular-material": "^1.0.8",
+        "angular-messages": "^1.5.5",
+        "protractor": "^3.3.0"
+    },
+    "description": "This is an app for ordering meal",
+    "main": "gulpfile.js",
+    "authors": [
+        "Islomzhon Yunusov <islomjon.yunus@gmail.com>"
+    ],
+    "license": "ISC",
+    "moduleType": [
+        "node"
+    ],
+    "homepage": "",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "test",
+        "tests"
+    ]
+}

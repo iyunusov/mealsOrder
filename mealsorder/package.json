@@ -1,0 +1,36 @@
+{
+  "name": "meal-order",
+  "version": "0.0.0",
+  "description": "This is an app for ordering meal",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-jsdoc": "^1.4.1",
+    "angular-material": "^1.0.8",
+    "angular-messages": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "gulp": "^3.8.8",
+    "gulp-connect": "^3.0.9",
+    "ionicons": "^3.0.0",
+    "protractor": "^3.3.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "^5.11.1",
+    "npm": "^3.8.6"
+  },
+  "scripts": {
+     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Islomzhon Yunusov <islomjon.yunus@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://mealsorder.herokuapp.com"
+}
